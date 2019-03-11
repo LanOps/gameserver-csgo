@@ -26,7 +26,7 @@ RUN { \
         echo 'app_update $APP_ID'; \
         echo 'quit'; \
 } > /home/steam/csgo_update.txt
-ADD startServer.sh /home/steam/startServer.sh
+ADD resources/root/startServer.sh /home/steam/startServer.sh
 
 # Expose Ports
 EXPOSE 27015 27020 27005 51840
