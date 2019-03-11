@@ -59,8 +59,6 @@ steps:
     - tag
     branch:
     - master
-    status:
-    - success
 
 # Notifcations - End
 
