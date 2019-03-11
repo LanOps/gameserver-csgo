@@ -98,7 +98,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "LCSGO Docker Build Drone",
+        "username": "CSGO Docker Build Drone",
         "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} - Image has been built and pushed to Docker Hub.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -128,3 +128,8 @@ steps:
 trigger:
   branch:
   - master
+---
+kind: signature
+hmac: 9338ce2ab65558b7e9534192f599e49ab1616fdbaf07010d929f77e64d73c785
+
+...
