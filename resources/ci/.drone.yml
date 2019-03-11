@@ -75,23 +75,6 @@ steps:
 
 # Notifcations - End
 
-- name: notify-discord-test-success
-  image: plugins/webhook
-  settings:
-    urls:
-      from_secret: DISCORD_WEBHOOK_URL
-    template: |
-      {
-        "username": "CSGO Docker Build Drone",
-        "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} Passed. GGWP!",
-        "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
-      }
-  when:
-    event:
-    - push
-    status:
-    - success
-
 - name: notify-discord-test-failure
   image: plugins/webhook
   settings:
@@ -109,7 +92,7 @@ steps:
     status:
     - failure
 
-- name: notify-discord-image-pushed-staging
+- name: notify-discord-image-pushed-master
   image: plugins/webhook
   settings:
     urls:
@@ -122,7 +105,7 @@ steps:
       }
   when:
     branch:
-    - staging
+    - master
     status:
     - success
 
@@ -140,8 +123,6 @@ steps:
   when:
     event:
     - tag
-    branch:
-    - master
     status:
     - success
 
