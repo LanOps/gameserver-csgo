@@ -43,13 +43,26 @@ steps:
 
 # Build & Push Docker Image
 
-- name: build-push-image-master
+- name: build-push-image-master-latest
+  image: plugins/docker
+  settings:
+    repo: lanopsdev/gameserver-csgo
+    tags: 
+    - latest
+    username:
+      from_secret: DOCKERHUB_USERNAME
+    password:
+      from_secret: DOCKERHUB_PASSWORD
+  when:
+    branch:
+    - master
+
+- name: build-push-image-master-tagged
   image: plugins/docker
   settings:
     repo: lanopsdev/gameserver-csgo
     tags: 
     - ${DRONE_TAG}
-    - latest
     username:
       from_secret: DOCKERHUB_USERNAME
     password:
