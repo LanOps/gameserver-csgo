@@ -7,7 +7,7 @@ cd /home/steam/csgo
         +quit
 ./srcds_run                                         \
     -game csgo                                      \
-    -tickrate 128                                   \
+    -tickrate ${SRCDS_TICKRATE}                     \
     -console                                        \
     -usercon                                        \
     -autoupdate                                     \

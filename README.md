@@ -11,6 +11,7 @@ docker run -it --name "CSGO" \
     -e SRCDS_TOKEN=xxx \
     -e SRCDS_PW=default \
     -e SRCDS_RCONPW=default \
+    -e SRCDS_TICKRATE=64 \
     -p 27015:27015 \
     -p 27015:27015/udp \
     lanopsdev/gameserver-csgo
@@ -26,6 +27,9 @@ docker run -it --name "CSGO" \
     -e SRCDS_MAP=de_dust2 \
     -e SRCDS_MAXPLAYERS=24 \
     -e SRCDS_TOKEN=xxx \
+    -e SRCDS_PW=default \
+    -e SRCDS_RCONPW=default \
+    -e SRCDS_TICKRATE=64 \
     -p 27015:27015 \
     -p 27015:27015/udp \
     lanopsdev/gameserver-csgo
@@ -47,3 +51,4 @@ docker run -it --name "CSGO" \
 * SRCDS_GAME_TYPE - CSGO Game Type (Default 0)
 * SRCDS_GAME_MODE - CSGO Game Mode (Default 0)
 * SRCDS_MAP_GROUP - CSGO Map Group (Default mg_active)
+* SRCDS_TICKRATE - CSGO Tickrate (Default 128)
