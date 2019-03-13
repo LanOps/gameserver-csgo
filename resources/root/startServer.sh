@@ -1,9 +1,9 @@
 #!/bin/sh
 
-cd /home/steam/csgo
+cd ${SRCDS_SRV_DIR}
 /home/steam/steamcmd/steamcmd.sh +login anonymous   \
-        +force_install_dir /home/steam/csgo         \
-        +app_update ${APP_ID} validate              \
+        +force_install_dir ${SRCDS_SRV_DIR}         \
+        +app_update ${SRCDS_APP_ID} validate        \
         +quit
 ./srcds_run                                         \
     -game csgo                                      \
@@ -11,7 +11,7 @@ cd /home/steam/csgo
     -console                                        \
     -usercon                                        \
     -autoupdate                                     \
-    -steam_dir /home/steam/steamcmd/                \
+    -steam_dir ${SRCDS_SRV_DIR}                     \
     -steamcmd_script /home/steam/csgo_update.txt    \
     -port ${SRCDS_PORT}                             \
     -net_port_try 1                                 \
