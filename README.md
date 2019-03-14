@@ -5,11 +5,9 @@
 ```
 docker run -it --name "CSGO" \
     -e SRCDS_HOSTNAME=myServer \
-    -e SRCDS_PORT=27015 \
     -e SRCDS_MAP=de_dust2 \
     -e SRCDS_MAXPLAYERS=24 \
     -e SRCDS_TOKEN=xxx \
-    -e SRCDS_PW=default \
     -e SRCDS_RCONPW=default \
     -e SRCDS_TICKRATE=64 \
     -p 27015:27015 \
@@ -23,11 +21,9 @@ docker run -it --name "CSGO" \
 docker run -it --name "CSGO" \
     -v localVolume:/home/steam/csgo \
     -e SRCDS_HOSTNAME=myServer \
-    -e SRCDS_PORT=27015 \
     -e SRCDS_MAP=de_dust2 \
     -e SRCDS_MAXPLAYERS=24 \
     -e SRCDS_TOKEN=xxx \
-    -e SRCDS_PW=default \
     -e SRCDS_RCONPW=default \
     -e SRCDS_TICKRATE=64 \
     -p 27015:27015 \
