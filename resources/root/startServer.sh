@@ -83,7 +83,7 @@ fi
     -console                                        \
     -usercon                                        \
     -autoupdate                                     \
-    -steam_dir ${SRCDS_SRV_DIR}                     \
+    -steam_dir /home/steam/steamcmd                 \
     -steamcmd_script /home/steam/csgo_update.txt    \
     -port ${SRCDS_PORT}                             \
     -net_port_try 1                                 \
