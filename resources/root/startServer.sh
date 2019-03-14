@@ -8,6 +8,7 @@ getSourceMod="false"
 if [ ! -d "csgo" ];
 then
     mkdir csgo
+    cp -r /tmp/cfg csgo/cfg/
 fi
 
 # Check if MetaMod Needs updating

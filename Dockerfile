@@ -45,6 +45,12 @@ RUN { \
 } > /home/steam/csgo_update.txt
 ADD resources/root/startServer.sh /home/steam/startServer.sh
 
+# Pre Load LanOps Server Configs
+
+RUN mkdir -p ${SRCDS_SRV_DIR}/csgo/cfg/
+COPY resources/root/cfg /tmp/cfg/
+RUN ls /tmp
+
 # Expose Ports
 
 EXPOSE 27015 27020 27005 51840
