@@ -71,6 +71,8 @@ then
     echo "${SOURCEMOD_VERSION_MAJOR}.${SOURCEMOD_VERSION_MINOR}-${SOURCEMOD_BUILD}" > csgo/addons/sm-version
 fi
 
+# Update Base Config
+
 export SRCDS_HOSTNAME="${SRCDS_HOSTNAME:-An Amazing CSGO Server}"
 
 sed -i 's/SERVER_NAME/'"$SRCDS_HOSTNAME"'/g' /home/steam/csgo/csgo/cfg/server.cfg
