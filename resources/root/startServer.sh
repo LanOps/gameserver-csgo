@@ -96,6 +96,7 @@ sed -i 's/SV_PASSWORD/'"$SRCDS_PW"'/g' /home/steam/csgo/csgo/cfg/server.cfg
     -nohltv                                         \
     -maxplayers_override ${SRCDS_MAXPLAYERS}        \
     +sv_pure ${SRCDS_PURE}                          \
+    +sv_region ${SRCDS_REGION}                      \
     +sv_setsteamaccount ${SRCDS_TOKEN}              \
     +sv_lan ${SRCDS_LAN}                            \
     +map ${SRCDS_MAP}                               \
