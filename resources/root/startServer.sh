@@ -71,6 +71,12 @@ then
     echo "${SOURCEMOD_VERSION_MAJOR}.${SOURCEMOD_VERSION_MINOR}-${SOURCEMOD_BUILD}" > csgo/addons/sm-version
 fi
 
+export SRCDS_HOSTNAME="${SRCDS_HOSTNAME:-An Amazing CSGO Server}"
+
+sed -i 's/SERVER_NAME/'"$SRCDS_HOSTNAME"'/g' /home/steam/csgo/csgo/cfg/server.cfg
+sed -i 's/RCON_PASSWORD/'"$SRCDS_RCONPW"'/g' /home/steam/csgo/csgo/cfg/server.cfg
+sed -i 's/SV_PASSWORD/'"$SRCDS_PW"'/g' /home/steam/csgo/csgo/cfg/server.cfg
+
 # Run Server
 
 /home/steam/steamcmd/steamcmd.sh +login anonymous   \
@@ -87,15 +93,13 @@ fi
     -steamcmd_script /home/steam/csgo_update.txt    \
     -port ${SRCDS_PORT}                             \
     -net_port_try 1                                 \
+    -nohltv                                         \
+    -maxplayers_override ${SRCDS_MAXPLAYERS}        \
     +sv_pure ${SRCDS_PURE}                          \
-    +maxplayers ${SRCDS_MAXPLAYERS}                 \
-    +hostname "${SRCDS_HOSTNAME}"                   \
-    +sv_password ${SRCDS_PW}                        \
-    +rcon_password ${SRCDS_RCONPW}                  \
-    sv_region ${SRCDS_REGION}                       \
-    +sv_setsteamaccount "${SRCDS_TOKEN}"            \
-    +sv_lan "${SRCDS_LAN}"                          \
+    +sv_setsteamaccount ${SRCDS_TOKEN}              \
+    +sv_lan ${SRCDS_LAN}                            \
     +map ${SRCDS_MAP}                               \
-    +game_type "${SRCDS_GAME_TYPE}"                 \
-    +game_mode "${SRCDS_GAME_MODE}"                 \
+    +game_type ${SRCDS_GAME_TYPE}                   \
+    +game_mode ${SRCDS_GAME_MODE}                   \
     +mapgroup ${SRCDS_MAP_GROUP}                    \
+    +ip 0.0.0.0
