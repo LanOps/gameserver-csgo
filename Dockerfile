@@ -3,17 +3,7 @@ MAINTAINER Thornton Phillis (Th0rn0@lanops.co.uk)
 
 # Env - Defaults
 
-ENV SRCDS_HOSTNAME default
 ENV SRCDS_PORT 27015 
-ENV SRCDS_MAXPLAYERS 14 
-ENV SRCDS_RCONPW rconpass 
-ENV SRCDS_REGION -1
-ENV SRCDS_PURE 1
-ENV SRCDS_MAP de_dust2
-ENV SRCDS_LAN 0
-ENV SRCDS_GAME_TYPE 0
-ENV SRCDS_GAME_MODE 0
-ENV SRCDS_MAP_GROUP mg_active
 ENV SRCDS_TICKRATE 128
 
 # Env - Server
@@ -47,7 +37,6 @@ ADD resources/root/startServer.sh /home/steam/startServer.sh
 
 RUN mkdir -p ${SRCDS_SRV_DIR}/csgo/cfg/
 COPY resources/root/cfg /tmp/cfg/
-RUN ls /tmp
 
 # Expose Ports
 
@@ -57,4 +46,5 @@ EXPOSE 27020 27005 51840
 
 # Start Server
 
-CMD ["/home/steam/startServer.sh"]
+ENTRYPOINT ["/home/steam/startServer.sh"]
+CMD ['+sv_pure 1', '+sv_region -1', '+sv_lan 0', '+map de_dust2', '+game_type 0', '+game_mode 0', '+mapgroup mg_active', '+ip 0.0.0.0']
