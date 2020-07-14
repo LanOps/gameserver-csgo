@@ -17,7 +17,7 @@ docker run -it --name "CSGO"                        \
     lanopsdev/gameserver-csgo
 ```
 
-You can also use the Entrypoint and CMD to customize configs and plugins like you would normally with SRCDS (Port & Tickrate must be changed via Env Variable);
+You can also use the Entrypoint and CMD to customize configs and plugins like you would normally with SRCDS (Port & Tickrate must be changed via Env Variable)
 
 ```
 docker run -it --name "CSGO"                        \
