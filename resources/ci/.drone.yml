@@ -13,8 +13,8 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker Build Drone",
-        "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Docker Build Started.",
+        "username": "CSGO Docker CI",
+        "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Build Started.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
   when:
@@ -30,8 +30,8 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker Build Drone",
-        "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - **TAGGED** Docker Build Started.",
+        "username": "CSGO Docker CI",
+        "content": "__**TAGGED**__ - \"${DRONE_COMMIT_MESSAGE}\" - Build Started.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
   when:
@@ -83,7 +83,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker Build Drone",
+        "username": "CSGO Docker CI",
         "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} Failed. Fix me please!",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -98,7 +98,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker Build Drone",
+        "username": "CSGO Docker CI",
         "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} - Image has been built and pushed to Docker Hub.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -115,8 +115,8 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker Build Drone",
-        "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} - Image has been built and pushed to Docker Hub.",
+        "username": "CSGO Docker CI",
+        "content": "__**TAGGED**__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} - Image has been built and pushed to Docker Hub.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
   when:
@@ -130,6 +130,6 @@ trigger:
   - master
 ---
 kind: signature
-hmac: 7b1e8b178c5be40738a524ea2769c521aa8ed2ec7b114d33813bb5cfb86f1837
+hmac: 157ec664e0aaa5606b1ce7e3ddae8c442d61c092400e83e5d445aa9d85d3b05f
 
 ...
