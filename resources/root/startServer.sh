@@ -43,7 +43,7 @@ fi
 
 # Update MetaMod
 
-if [[ $getMetaMod == "true" ]];
+if [ "$getMetaMod" = "true" ];
 then
     curl -sSL https://mms.alliedmods.net/mmsdrop/$METAMOD_VERSION_MAJOR/mmsource-$METAMOD_VERSION_MAJOR.$METAMOD_VERSION_MINOR-git$METAMOD_BUILD-linux.tar.gz \
         -o /tmp/metamod.tar.gz
@@ -58,7 +58,7 @@ fi
 
 # Update SourceMod
 
-if [[ $getSourceMod == "true" ]];
+if [ "$getSourceMod" = "true" ];
 then
     curl -sSL https://sm.alliedmods.net/smdrop/$SOURCEMOD_VERSION_MAJOR/sourcemod-$SOURCEMOD_VERSION_MAJOR.$SOURCEMOD_VERSION_MINOR-git$SOURCEMOD_BUILD-linux.tar.gz \
         -o /tmp/sourcemod.tar.gz
@@ -89,5 +89,4 @@ echo "$@"
     -steamcmd_script /home/steam/csgo_update.txt    \
     -port ${SRCDS_PORT}                             \
     -net_port_try 1                                 \
-    -nohltv                                         \
     $@
