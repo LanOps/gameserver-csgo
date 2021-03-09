@@ -1,5 +1,4 @@
 # CSGO Docker Image
-[![Build Status](http://drone.th0rn0.co.uk/api/badges/LanOps/gameserver-csgo/status.svg)](http://drone.th0rn0.co.uk/LanOps/gameserver-csgo)
 
 CSGO Dedicated Server with Metamod & Sourcemod running at 128 Tick.
 
